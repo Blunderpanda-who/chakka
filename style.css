@@ -1,0 +1,121 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: background 1s;
+}
+
+/* 🎀 THEMES */
+body.pink {
+  background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+}
+
+body.purple {
+  background: linear-gradient(135deg, #b983ff, #7f00ff);
+}
+
+/* 🎀 Ribbons */
+.ribbons {
+  position: fixed;
+  inset: 0;
+  background:
+    linear-gradient(120deg, rgba(255,105,180,0.25), transparent),
+    linear-gradient(-120deg, rgba(186,85,211,0.25), transparent);
+  animation: ribbonFlow 8s ease-in-out infinite alternate;
+  z-index: -3;
+}
+
+@keyframes ribbonFlow {
+  from { transform: translateY(0); }
+  to { transform: translateY(-40px); }
+}
+
+/* 💖 Hearts */
+.hearts::before,
+.hearts::after {
+  content: "💗 💕 💖 💘 💝";
+  position: fixed;
+  bottom: -10%;
+  font-size: 24px;
+  animation: floatHearts 12s linear infinite;
+  opacity: 0.6;
+}
+
+.hearts::after {
+  left: 20%;
+  animation-duration: 16s;
+}
+
+@keyframes floatHearts {
+  from { transform: translateY(0); opacity: 0; }
+  to { transform: translateY(-120vh); opacity: 1; }
+}
+
+/* ❄️ Snow Canvas */
+#snow {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+}
+
+/* 💌 Container */
+.container {
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(12px);
+  padding: 35px;
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(255,47,146,0.6);
+  animation: glow 4s infinite alternate;
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 15px rgba(255,255,255,0.4); }
+  to { box-shadow: 0 0 35px rgba(255,255,255,0.9); }
+}
+
+h1 {
+  font-size: 2.6em;
+  color: #ff2f92;
+}
+
+p {
+  color: #333;
+}
+
+/* 🔘 Buttons */
+button {
+  margin: 10px;
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: none;
+  background: #ff2f92;
+  color: white;
+  cursor: pointer;
+  animation: pulse 2.5s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255,47,146,0.5); }
+  70% { box-shadow: 0 0 0 12px rgba(255,47,146,0); }
+}
+
+.toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
+.wish {
+  font-size: 18px;
+  margin-top: 20px;
+  color: #b0005f;
+}
